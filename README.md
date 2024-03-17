@@ -18,7 +18,7 @@
 - [x] Release training code
 ## Installation
 
-See [Installation instructions](INSTALL.md).
+See [Installation instructions](docs/INSTALL.md).
 
 ## Getting Started
 
