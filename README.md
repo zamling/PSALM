@@ -24,7 +24,7 @@ See [Installation instructions](docs/INSTALL.md).
 
 See [Preparing Datasets for PSALM.](docs/DATASET.md)
 
-See [Getting Started with PSALM.](docs/INSTALL.md)
+See [Getting Started with PSALM.](docs/GETTING_STARTED.md)
 
 ## Model Zoo
 - Download Mask2former [here](https://dl.fbaipublicfiles.com/maskformer/mask2former/coco/panoptic/maskformer2_swin_base_IN21k_384_bs16_50ep/model_final_54b88a.pkl) firstly to get the pretrained image encoder.
