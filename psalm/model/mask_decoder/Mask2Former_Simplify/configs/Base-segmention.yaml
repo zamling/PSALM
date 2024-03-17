@@ -1,0 +1,93 @@
+MODEL:
+  BACKBONE: 
+    TYPE: 'swin' # 'resnet' or 'swin'
+  PRETRAINED_WEIGHTS: 
+  IS_TRAINING: True    
+  RESNETS:
+    DEPTH: 50
+    STEM_OUT_CHANNELS: 64
+    STRIDE_IN_1X1: False    
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+  SWIN:
+    TYPE: "base" # "tiny" or "small" or "base" or "large"
+    EMBED_DIM: 96
+    DEPTHS: [2 2 6 2]
+    NUM_HEADS: [3 6 12 24]
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+    MLP_RATIO: 4.
+    QKV_BIAS: True
+    QK_SCALE: 
+    DROP_RATE: 0.
+    ATTN_DROP_RATE: 0.
+    DROP_PATH_RATE: 0.3
+    APE: False
+    PATCH_NORM: True
+    OUT_INDICES: (0 1 2 3)
+    PRETRAIN_IMG_SIZE: 384
+    USE_CHECKPOINT: False
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+DATASETS:
+  TRAIN: 'dataset/training.odgt'
+  VALID: 'dataset/validation.odgt'
+  ROOT_DIR: 'nuImages/ImageData/nuimages-v1.0-all-samples/'
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+
+SOLVER:
+  IMS_PER_BATCH: 16
+  BASE_LR: 0.0001
+  MAX_ITER: 160000
+  WARMUP_FACTOR: 1.0
+  WARMUP_ITERS: 0
+  WEIGHT_DECAY: 0.05
+  OPTIMIZER: "ADAMW"
+  LR_SCHEDULER_NAME: "WarmupPolyLR"
+  BACKBONE_MULTIPLIER: 0.1
+  CLIP_GRADIENTS:
+    ENABLED: True
+    CLIP_TYPE: "full_model"
+    CLIP_VALUE: 0.01
+    NORM_TYPE: 2.0
+  AMP:
+    ENABLED: True
+INPUT:
+  MIN_SIZE_TRAIN: !!python/object/apply:eval ["[int(x * 0.1 * 640) for x in range(5, 21)]"]
+  MIN_SIZE_TRAIN_SAMPLING: "choice"
+  CROP:
+    ENABLED: True
+    TYPE: "absolute"
+    SIZE: [224, 320, 480, 512] # [640, 800, 960, 1120]
+    MAX_SIZE: [1024, 576] # [width, height]
+    SINGLE_CATEGORY_MAX_AREA: 1.0
+  COLOR_AUG_SSD: True
+  SIZE_DIVISIBILITY: 640  # used in dataset mapper
+  FORMAT: "RGB"
+  DATASET_MAPPER_NAME: "mask_former_instance"
+TRAIN:
+  LOG_DIR: 'logs'
+  CKPT_DIR: 'ckpt'  
+  BATCH_SIZE: 9
+  WORKERS: 8
+  EPOCH: 300
+SOLVER:
+  LR: 0.00006
+  OPTIMIZER: "ADAMW"
+  CLIP_GRADIENTS:
+    ENABLED: True
+    CLIP_TYPE: "full_model"
+    CLIP_VALUE: 0.01
+    NORM_TYPE: 2.0
+TEST:
+  EVAL_PERIOD: 5000
+  TEST_DIR: 'test'
+  SAVE_DIR: 'output'
+  AUG:
+    ENABLED: False
+    MIN_SIZES: [320, 480, 640, 800, 960, 1120]
+    MAX_SIZE: 4480
+    FLIP: True
+DATALOADER:
+  FILTER_EMPTY_ANNOTATIONS: True
+  NUM_WORKERS: 4
+VERSION: 2
