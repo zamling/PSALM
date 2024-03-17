@@ -32,6 +32,11 @@ python psalm/eval/instance_segmentation.py --image_folder /path/to/coco/val2017/
 python psalm/eval/referring_segmentation.py --image_folder /path/to/train2014 --json_path /path/to/refcoco/refcoco_val.json --model_path /path/to/PSALM
 # also can eval refcoco+ and refcocog by replacing --json_path
 ```
+- **Interactive COCO**
+```
+python psalm/eval/region_segmentation.py --image_folder /path/to/coco/val2017 --model_path /path/to/PSALM/ --json_path /path/to/visual_prompt_segmentation_val.json --region_mask_type point_visual_prompt_mask
+# also can eval box/scribble/mask by replacing --region_mask_type to box/scribble/mask_visual_prompt_mask
+```
 ### Out-Domain Tasks
 - **OV segmentation**
 ```

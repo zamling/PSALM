@@ -806,7 +806,8 @@ class MM_Conv_Dataset(Dataset):
         self.data_args = data_args
 
     def __len__(self):
-        return len(self.list_data_dict)
+        return len(self.list_data_dict[:200000])
+        # return len(self.list_data_dict)
 
     def preprocess_llama2(self, sources, tokenizer):
         conv = conversation_lib.default_conversation.copy()

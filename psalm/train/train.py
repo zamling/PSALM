@@ -75,7 +75,7 @@ class ModelArguments:
     mm_projector_type: Optional[str] = field(default="swin_conv")
     model_version: Optional[str] = field(default="v1")
     load_mask2former: bool = field(default=True)
-    seg_task: Optional[str] = field(default="instance")
+    seg_task: Optional[str] = field(default="panoptic")
     mask_config: Optional[str] = field(default="./psalm/mask_config/maskformer2_swin_base_384_bs16_50ep.yaml")
     dino_path: Optional[str] = field(default=None)
 
