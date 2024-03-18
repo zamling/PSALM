@@ -32,10 +32,10 @@ class LlavaMetaModel:
             if 'swin' in config.mm_vision_tower or 'coco' in config.mm_vision_tower or 'final' in config.mm_vision_tower or 'dino' in config.mm_vision_tower:
                 swin_type = getattr(config, 'swin_type', 'base')
                 if swin_type == 'base':
-                    self.vision_tower = build_swin_b(config.mm_vision_tower)
+                    self.vision_tower = build_swin_b(None)
 
                 else:
-                    self.vision_tower = build_swin_l(config.mm_vision_tower)
+                    self.vision_tower = build_swin_l(None)
                 self.mm_projector = build_vision_projector(config)
 
     def get_vision_tower(self):

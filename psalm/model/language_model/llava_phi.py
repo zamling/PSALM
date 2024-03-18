@@ -59,9 +59,9 @@ class PSALMModel(LlavaMetaModel, PhiModel):
         if hasattr(config, "mm_vision_tower"):
             swin_type = getattr(config,'swin_type','base')
             if swin_type == 'base':
-                self.vision_tower = build_swin_b(config.mm_vision_tower)
+                self.vision_tower = build_swin_b(None)
             else:
-                self.vision_tower = build_swin_l(config.mm_vision_tower)
+                self.vision_tower = build_swin_l(None)
             self.mm_projector = build_vision_projector(config)
             self.vision_tower.image_processor = {}
             self.vision_tower.image_processor['panoptic'] = COCOPanopticNewBaselineDatasetMapper(self.cfg)
