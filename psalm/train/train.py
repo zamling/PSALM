@@ -347,6 +347,7 @@ def make_unify_datamodule(tokenizer, data_args, training_args):
     datasets = [panoptic_coco_dataset]*data_ratio[0] + [refcoco_dataset] * data_ratio[1] + [region_coco_dataset]*data_ratio[2] + [mm_conv_dataset]*data_ratio[3]
     print(f'the dataset ratio is: {data_ratio}')
 
+    # you can change 16 to your frequency sets, it represents how many samples to change tasks
     train_dataset = UnifyDatasetSingleDatasetForBatch(datasets,data_ratio,16,fix_dataset_len=data_args.fix_dataset_len)
     print(f'total unify dataset number is {len(train_dataset)}')
     data_collator = DataCollatorForCOCODatasetV2(tokenizer=tokenizer)

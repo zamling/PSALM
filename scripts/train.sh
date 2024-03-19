@@ -35,7 +35,7 @@ deepspeed psalm/train/train.py \
     --tf32 False \
     --model_max_length 2048 \
     --gradient_checkpointing True \
-    --dataloader_num_workers 0 \
+    --dataloader_num_workers 4 \
     --lazy_preprocess True \
     --report_to none \
     --seg_task 'panoptic'
