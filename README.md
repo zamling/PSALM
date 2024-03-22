@@ -3,7 +3,7 @@
 >
 > <sup>* Equal Contribution
 
-
+[Arxiv Paper](https://arxiv.org/abs/2403.14598)
 
 ### Features
 
@@ -32,8 +32,13 @@ See [Getting Started with PSALM.](docs/GETTING_STARTED.md)
 ## Citation
 If you think this work is useful for your research, please use the following BibTeX entry.
 ```
-{
-
+@misc{zhang2024psalm,
+      title={PSALM: Pixelwise SegmentAtion with Large Multi-Modal Model}, 
+      author={Zheng Zhang and Yeyao Ma and Enming Zhang and Xiang Bai},
+      year={2024},
+      eprint={2403.14598},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 ## Acknowledgement
