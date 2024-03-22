@@ -86,22 +86,22 @@ class DataArguments:
     lazy_preprocess: bool = False
     is_multimodal: bool = False
     image_folder: Optional[str] = field(default=None)
-    refcoco_image_folder: Optional[str] = "/home/emzhang/data/segmentation/refer_seg/images/mscoco/images/train2014"
+    refcoco_image_folder: Optional[str] = "/path/to/refer_seg/images/mscoco/images/train2014"
     image_first: bool = field(default=True)
     seg_last: bool = field(default=True)
     instruction_version: str = 'v1'
     image_aspect_ratio: str = 'square'
     image_grid_pinpoints: Optional[str] = field(default=None)
-    json_path: str = '/home/emzhang/code/LLaVA/datasets/instruction_segmentation_train.json'
-    instance_json_path: str = '/home/emzhang/code/LLaVA/datasets/instruction_segmentation_train.json'
-    lvis_json_path: str = '/home/emzhang/code/LLaVA/datasets/lvis_instance_train.json'
-    lvis_categories_path: str = '/home/emzhang/code/LLaVA/datasets/lvis_instance_categories.json'
-    region_json_path: str = '/home/emzhang/code/LLaVA/datasets/visual_prompt_segmentation_train.json'
-    panoptic_json_path: str = "/home/emzhang/data/segmentation/coco"
-    ref_coco_path: str = '/home/emzhang/code/LLaVA/datasets/refcoco/refcoco_train.json'
-    ref_coco_plus_path: str = '/home/emzhang/code/LLaVA/datasets/refcoco+/refcoco+_train.json'
-    ref_coco_g_path: str = '/home/emzhang/code/LLaVA/datasets/refcocog/refcocog_train.json'
-    mmconv_path: str = '/home/emzhang/code/LLaVA/datasets/refcocog/refcocog_train.json'
+    json_path: str = '/path/to/instruction_segmentation_train.json'
+    instance_json_path: str = '/path/to/instruction_segmentation_train.json'
+    lvis_json_path: str = '/path/to/lvis_instance_train.json'
+    lvis_categories_path: str = '/path/to/lvis_instance_categories.json'
+    region_json_path: str = '/path/to/visual_prompt_segmentation_train.json'
+    panoptic_json_path: str = "/path/to/coco"
+    ref_coco_path: str = '/path/to/refcoco/refcoco_train.json'
+    ref_coco_plus_path: str = '/path/to/refcoco+/refcoco+_train.json'
+    ref_coco_g_path: str = '/path/to/refcocog/refcocog_train.json'
+    mmconv_path: str = '/path/to/llava_1_5'
     data_ratio: str = '1||1||1||1'
     fix_dataset_len: int = 0
     segmentation: bool = True
