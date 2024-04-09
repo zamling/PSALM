@@ -37,5 +37,6 @@ cd ..
 git clone https://github.com/zamling/PSALM.git
 cd PSALM
 pip install -e .
+pip install opencv-python addict
 cd psalm/model/mask_decoder/Mask2Former_Simplify/modeling/pixel_decoder/ops
 sh make.sh
