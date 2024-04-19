@@ -3,7 +3,6 @@ deepspeed psalm/train/train.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path "/home/hk/yyma/data/phi-1_5_dev" \
     --version "llava_phi" \
-    --instance_json_path "/path/to/instruction_segmentation_train.json" \
     --region_json_path "/path/to/visual_prompt_segmentation_train.json" \
     --panoptic_json_path "/path/to/coco" \
     --ref_coco_path "/path/to/refcoco/refcoco_train.json" \
