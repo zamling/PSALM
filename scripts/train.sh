@@ -3,13 +3,13 @@ deepspeed psalm/train/train.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path "/home/hk/yyma/data/phi-1_5_dev" \
     --version "llava_phi" \
-    --region_json_path "/path/to/visual_prompt_segmentation_train.json" \
+    --region_json_path "/path/to/coco_interactive_train_psalm.json" \
     --panoptic_json_path "/path/to/coco" \
     --ref_coco_path "/path/to/refcoco/refcoco_train.json" \
     --ref_coco_plus_path "/path/to/refcoco+/refcoco+_train.json" \
     --ref_coco_g_path "/path/to/refcocog/refcocog_train.json" \
     --image_folder "/path/to/coco/train2017" \
-    --refcoco_image_folder "/path/to/refer_seg/images/mscoco/images/train2014" \
+    --refcoco_image_folder "/path/to/coco/train2014" \
     --mmconv_path "/path/to/llava_1_5" \
     --vision_tower "/path/to/model.pkl" \
     --pretrain_mm_mlp_adapter "/path/to/mm_projector.bin" \

@@ -25,7 +25,7 @@ python psalm/eval/panoptic_segmentation.py --image_folder /path/to/coco/val2017/
 ```
 - **Instance COCO**
 ```
-python psalm/eval/instance_segmentation.py --image_folder /path/to/coco/val2017/ --model_path /path/to/PSALM --json_path /path/to/coco/instance_instruction_segmentation_val.json
+python psalm/eval/instance_segmentation.py --image_folder /path/to/coco/val2017/ --model_path /path/to/PSALM --json_path /path/to/coco/instance_val_psalm.json
 ```
 - **RefCOCO**
 ```
@@ -34,7 +34,7 @@ python psalm/eval/referring_segmentation.py --image_folder /path/to/train2014 --
 ```
 - **Interactive COCO**
 ```
-python psalm/eval/region_segmentation.py --image_folder /path/to/coco/val2017 --model_path /path/to/PSALM/ --json_path /path/to/visual_prompt_segmentation_val.json --region_mask_type point_visual_prompt_mask
+python psalm/eval/region_segmentation.py --image_folder /path/to/coco/val2017 --model_path /path/to/PSALM/ --json_path /path/to/coco_interactive_val_psalm.json --region_mask_type point_visual_prompt_mask
 # also can eval box/scribble/mask by replacing --region_mask_type to box/scribble/mask_visual_prompt_mask
 ```
 ### Out-Domain Tasks
@@ -49,5 +49,5 @@ python psalm/eval/eval_grefcoco.py --model_path /path/to/PSALM --json_path /path
 ```
 - **DAVIS**
 ```
-python psalm/eval/eval_davis.py --image_folder /path/to/DAVIS --model_path /path/to/PSALM --json_path /path/to/DAVIS/2017/trainval_val.json
+python psalm/eval/eval_davis.py --image_folder /path/to/DAVIS --model_path /path/to/PSALM --json_path /path/to/DAVIS/2017/trainval_val_psalm.json
 ```

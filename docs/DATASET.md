@@ -141,3 +141,32 @@ DAVIS/
 
 run `python datasets/build_DAVIS.py`, to get the dataset format for evaluation.
 
+### Download Converted Dataset Files
+You can download converted files ([Google Drive](https://drive.google.com/file/d/1EcC1tl1OQRgIqqy7KFG7JZz2KHujAQB3/view?usp=sharing) | [Baidu Cloud](https://pan.baidu.com/s/1NRGJGkJDUGn8CU-sU5ScOg) (code: hust)).
+The dowloaded files should in following structure:
+```
+refcoco/
+    refcoco_val.json
+    refcoco_testA.json
+    ...
+refcoco+/
+    refcoco+_val.json
+    refcoco+_testA.json
+    ...
+refcocog/
+    refcocog_val.json
+    refcocog_test.json
+    ...
+grefcoco/
+    refcocog_val.json
+    refcocog_testA.json
+    refcocog_testB.json
+coco_interactive_train_psalm.json # training set for interactive coco
+coco_interactive_val_psalm.json # val set for interactive coco
+instruction_dataset_coco_format.json: # GT for COCO instance
+    #you need to put this file in psalm/output/instance_segmentation
+instruction_dataset_coco_format.json.lock #you need to put this file in psalm/output/instance_segmentation
+instance_train_psalm.json: training set for COCO instance 
+instance_val_psalm.json: val set for COCO instance 
+trainval_val_psalm.json: val set for DAVIS
+```
