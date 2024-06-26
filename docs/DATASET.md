@@ -67,6 +67,8 @@ We build COCO-Interactive upon COCO-Instance. So make sure follow the instructio
 
 run `python datasets/build_COCO_Interactivate.py`, to get the dataset format for joint training.
 
+Also you can directly download converted file of COCO-Interactive in [Google Drive](https://drive.google.com/file/d/1EcC1tl1OQRgIqqy7KFG7JZz2KHujAQB3/view?usp=sharing) | [Baidu Cloud](https://pan.baidu.com/s/1NRGJGkJDUGn8CU-sU5ScOg) . Detailed format of downloaded file is [here](https://github.com/zamling/PSALM/blob/main/docs/DATASET.md#download-converted-dataset-files)
+
 ### Dataset preparation for LLaVA-1.5 training data:
 Please download the images and [annotation](https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/blob/main/llava_v1_5_mix665k.json) following [llava 1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#visual-instruction-tuning) stage 2 training instruction. 
 ```
