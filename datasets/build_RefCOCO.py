@@ -49,7 +49,7 @@ def build_referring_dataset(instance_path, refs_path, split, save_path):
 if __name__ == '__main__':
     # Change root path to your own directory
     root_path = 'datasets/refer_seg'
-    datasets = ['refcoco', 'refcoco+, refcocog']
+    datasets = ['refcoco', 'refcoco+', 'refcocog']
     splits = ['train', 'val', 'testA', 'testB']
     for dataset in datasets:
         if dataset == 'refcocog':
