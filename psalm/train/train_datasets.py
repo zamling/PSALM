@@ -533,21 +533,22 @@ class COCO_panoptic_dataset_random(COCO_panoptic_dataset):
         data_dict = processor.preprocess(data_dict, mask_format=self.mask_format)
         # instruction = data['instruction']
         instruction = 'Panoptic Segmentation: You need to segment all objects '
+        prefix_inst = 'This is an image <image>, Please do Panoptic Segmentation.'
 
         num_class = len(self.coco_class_name)
         category = '<cls>, ' * (num_class-1) + '<cls>.'
 
-        sources_value = f'This is all the candidate categories: {category}\n<image>\n'
+        sources_value = f'\nThis is all the candidate categories: {category}\n'
 
-        sources = [[{'from': 'human', 'value': sources_value + instruction},
-                    {'from': 'gpt', 'value': '\n[SEG]<seg>'}]]
+        sources = [[{'from': 'human', 'value':  prefix_inst + sources_value},
+                    {'from': 'gpt', 'value': '\nSure, the segmentation result is <seg>'}]]
         # sources = self.preprocess_multimodal(copy.deepcopy(sources))
 
         text_dict = self.preprocess_llama2(sources, self.tokenizer)
         input_ids = text_dict['input_ids'][0]
         labels = text_dict['labels'][0]
 
-        class_name_ids, cls_indices, random_idx = self.preprocess_class_name()
+        class_name_ids, cls_indices, random_idx = self.preprocess_class_name(CLS_token='[SEG]')
         data_dict['random_idx'] = random_idx
         class_name_embedding_indices = torch.zeros_like(input_ids)
         class_name_embedding_indices[input_ids == CLS_TOKEN_INDEX] = 1
