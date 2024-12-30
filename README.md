@@ -32,13 +32,13 @@ See [Getting Started with PSALM.](docs/GETTING_STARTED.md)
 ## Citation
 If you think this work is useful for your research, please use the following BibTeX entry.
 ```
-@misc{zhang2024psalm,
-      title={PSALM: Pixelwise SegmentAtion with Large Multi-Modal Model}, 
-      author={Zheng Zhang and Yeyao Ma and Enming Zhang and Xiang Bai},
-      year={2024},
-      eprint={2403.14598},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{zhang2025psalm,
+  title={Psalm: Pixelwise segmentation with large multi-modal model},
+  author={Zhang, Zheng and Ma, Yeyao and Zhang, Enming and Bai, Xiang},
+  booktitle={European Conference on Computer Vision},
+  pages={74--91},
+  year={2025},
+  organization={Springer}
 }
 ```
 ## Acknowledgement
